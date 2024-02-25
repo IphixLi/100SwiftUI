@@ -31,7 +31,7 @@ struct ContentView: View {
     var body: some View{
         NavigationStack {
             Form {
-                VStack(alignment: .leading, spacing: 0) {
+                Section(header:Text("Wake up time")) {
                     Text("When do you want to wake up?")
                         .font(.headline)
 
@@ -39,19 +39,31 @@ struct ContentView: View {
                         .labelsHidden()
                 }
 
-                VStack(alignment: .leading, spacing: 0) {
+                Section(header:Text("Sleet amount")) {
                     Text("Desired amount of sleep")
                         .font(.headline)
 
                     Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
                 }
 
-                VStack(alignment: .leading, spacing: 0) {
+                Section(header:Text("Coffee  intake")) {
                     Text("Daily coffee intake")
                         .font(.headline)
 
-                    Stepper("^[\(coffeAmount) cup](inflect:true)", value: $coffeAmount, in: 1...20)
+//                    Stepper("^[\(coffeAmount) cup](inflect:true)", value: $coffeAmount, in: 1...20)
+//                    
+                    Picker("number of cups: ", selection:$coffeAmount){
+                        ForEach(1..<21){
+                            Text("\($0) cups")
+                        }
+                    }
+                    .pickerStyle(.navigationLink)   //navigation style
                 }
+                
+//                Section(header:Text("recommended sleep").font(.title)){
+//                    Text(
+//                    
+//                }
             }
             .navigationTitle("BetterRest")
             .toolbar {
