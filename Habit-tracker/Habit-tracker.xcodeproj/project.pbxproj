@@ -11,6 +11,7 @@
 		C5429E0D2BAA54C0005CFEEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5429E0C2BAA54C0005CFEEF /* ContentView.swift */; };
 		C5429E0F2BAA54C1005CFEEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5429E0E2BAA54C1005CFEEF /* Assets.xcassets */; };
 		C5429E122BAA54C1005CFEEF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5429E112BAA54C1005CFEEF /* Preview Assets.xcassets */; };
+		C5429E192BAA5C0B005CFEEF /* AddActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5429E182BAA5C0B005CFEEF /* AddActivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C5429E0C2BAA54C0005CFEEF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C5429E0E2BAA54C1005CFEEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5429E112BAA54C1005CFEEF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C5429E182BAA5C0B005CFEEF /* AddActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				C5429E0A2BAA54C0005CFEEF /* Habit_trackerApp.swift */,
 				C5429E0C2BAA54C0005CFEEF /* ContentView.swift */,
+				C5429E182BAA5C0B005CFEEF /* AddActivity.swift */,
 				C5429E0E2BAA54C1005CFEEF /* Assets.xcassets */,
 				C5429E102BAA54C1005CFEEF /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5429E0D2BAA54C0005CFEEF /* ContentView.swift in Sources */,
+				C5429E192BAA5C0B005CFEEF /* AddActivity.swift in Sources */,
 				C5429E0B2BAA54C0005CFEEF /* Habit_trackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
