@@ -17,7 +17,7 @@ struct DetailView: View {
     var body: some View {
         ScrollView {
             ZStack(alignment: .bottomTrailing) {
-                Image(book.genre)
+                genreImage(for: book.genre)
                     .resizable()
                     .scaledToFit()
 
@@ -50,6 +50,11 @@ struct DetailView: View {
             .font(.title)
             .foregroundStyle(.secondary)
         
+        HStack{
+            Text("Date added: ")
+            Text(book.date, format:.dateTime.hour().minute())
+        }
+
         Text(book.review)
             .padding()
         
@@ -61,6 +66,32 @@ struct DetailView: View {
     func deleteBook(){
         modelContext.delete(book)
         dismiss()
+    }
+    
+    func genreImage(for genre: String) -> Image {
+        if let uiImage = UIImage(named: genre) {
+            return Image(uiImage: uiImage)
+        } else {
+            let randomColor=UIColor(red:Double.random(in: 0...1),
+                                    green:Double.random(in: 0...1),
+                                    blue:Double.random(in: 0...1),
+                                    alpha: 1.0)
+            return Image(uiImage: UIImage(color: randomColor)!)
+        }
+    }
+    
+}
+
+extension UIImage {
+    convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        defer { UIGraphicsEndImageContext() }
+
+        color.setFill()
+        UIRectFill(CGRect(origin: .zero, size: size))
+
+        guard let cgImage = UIGraphicsGetImageFromCurrentImageContext()?.cgImage else { return nil }
+        self.init(cgImage: cgImage)
     }
 }
 
