@@ -2,41 +2,26 @@
 //  ContentView.swift
 //  Project13
 //
-//  Created by Iphigenie Bera on 8/25/24.
+//  Created by Iphigenie Bera on 8/26/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    @State private var blurAmount = 0.0
-    @State private var showingConfirmation = false
-    @State private var backgroundColor = Color.white
-
-
     var body: some View {
-        Button("Hello, World!") {
-            showingConfirmation = true
+//        ContentUnavailableView("No snippets", systemImage: "swift", description: Text("You don't have any saved snippets yet."))
+        
+        ContentUnavailableView {
+            Label("No snippets", systemImage: "swift")
+        } description: {
+            Text("You don't have any saved snippets yet.")
+        } actions: {
+            Button("Create Snippet") {
+                // create a snippet
+            }
+            .buttonStyle(.borderedProminent)
         }
-        .frame(width: 300, height: 300)
-        .background(backgroundColor)
-        .confirmationDialog("Change background", isPresented: $showingConfirmation){
-            Button("Red"){ backgroundColor = .red}
-            Button("Green") { backgroundColor = .green }
-            Button("Blue") { backgroundColor = .blue }
-            Button("Cancel", role: .cancel) { }
-        } message:{
-            Text("Select a new Color")
-        }
-//        VStack {
-//            Text("Hello, World!")
-//                .blur(radius: blurAmount)
-//
-//            Slider(value: $blurAmount, in: 0...20)
-//                // onchange can be attached anywhere!
-//                .onChange(of: blurAmount){oldValue, newValue in
-//                    print("New Value is \(newValue)")
-//                }
-//        }
+
     }
 }
 
